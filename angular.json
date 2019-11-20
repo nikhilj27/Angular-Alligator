@@ -62,7 +62,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Angular-Alligator:build"
+            "browserTarget": "Angular-Alligator:build",
+            "proxyConfig": "proxy.json"
           },
           "configurations": {
             "production": {
