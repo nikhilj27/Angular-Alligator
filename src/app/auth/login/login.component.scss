@@ -6,14 +6,22 @@
 }
 
 .card {
-    padding: 10%;
+  padding: 10%;
 }
 
 .createNew {
-    line-height: 0.1;
-    cursor: pointer;
+  line-height: 0.1;
+  cursor: pointer;
 }
 
-.createNew:hover{
-    text-decoration: underline;
+.errClass {
+  border: 1px solid red !important;
+}
+
+.createNew:hover {
+  text-decoration: underline;
+}
+
+.mat-simple-snackbar {
+    font-size: 16px !important;
 }
