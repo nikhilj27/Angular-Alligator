@@ -13,6 +13,7 @@ import { SnackbarService } from "src/app/Services/snackbar.service";
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   submitted: boolean = false;
+  hide = true;
 
   constructor(
     private authService: AuthService,

@@ -1,50 +1,46 @@
 <div class="grid-container">
     <div></div>
     <div>
-        <div class="card">
+        <mat-card>
             <form [formGroup]="registrationForm">
                 <h3>Become a member...</h3>
                 <h5>It's all starts here</h5>
                 <div class="form-group">
-                    <input type="text" placeholder="e.g.John Wick" [formControl]="registrationForm.controls['name']"
-                    [ngClass]="registerControl.name.errors?.required && submitted ? 'errClass': '' "
-                    >
-                    <div *ngIf="registerControl.name.errors?.required && submitted">
-                        <label class="errMsg">Name is required</label>
-                    </div>
+                    <mat-form-field>
+                        <input matInput placeholder="e.g.John Wick" [formControl]="registrationForm.controls['name']">
+                        <mat-error *ngIf="registerControl.name.errors?.required">Name is required</mat-error>
+                    </mat-form-field>
                 </div>
 
                 <div class="form-group">
-                    <input type="text" placeholder="username@email.com"
-                        [formControl]="registrationForm.controls['email']"
-                        [ngClass]="(registerControl.email.errors?.required && submitted || registerControl.email.errors?.email && submitted) ? 'errClass': '' "
-                        >
-                    <div *ngIf="registerControl.email.errors?.required && submitted">
-                        <label class="errMsg">Email is required</label>
-                    </div>
-
-                    <div *ngIf="registerControl.email.errors?.email && submitted">
-                        <label class="errMsg">Enter valid email address</label>
-                    </div>
+                    <mat-form-field>
+                        <input matInput placeholder="username@email.com"
+                            [formControl]="registrationForm.controls['email']">
+                        <mat-error *ngIf="registerControl.email.errors?.required">Email is required</mat-error>
+                        <mat-error *ngIf="registerControl.email.errors?.email">Enter valid email address</mat-error>
+                    </mat-form-field>
                 </div>
 
                 <div class="form-group">
-                    <input type="password" placeholder="Password" [formControl]="registrationForm.controls['password']"
-                    [ngClass]="registerControl.password.errors?.required && submitted ? 'errClass': '' "
-                    >
-                    <div *ngIf="registerControl.password.errors?.required && submitted">
-                        <label class="errMsg">Password is required</label>
-                    </div>
+                    <mat-form-field>
+                        <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'"
+                            [formControl]="registrationForm.controls['password']">
+                        <mat-error *ngIf="registerControl.password.errors?.required">Password is required</mat-error>
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                            [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </div>
+                <div class="form-group createNew">
+                    Already have account?<a [routerLink]="['']"> Login here</a>
+                </div>
+                <div class="form-group">
+                    <button mat-raised-button color="primary" style="outline: none;color: #fff;"
+                        (click)="registerUser()">SignUp</button>
                 </div>
             </form>
-            <div class="form-group createNew">
-                Already have account?<a [routerLink]="['']"> Login here</a>
-            </div>
-            <div class="form-group">
-                <button (click)="registerUser()">SignUp</button>
-            </div>
-
-        </div>
+        </mat-card>
     </div>
     <div></div>
 </div>

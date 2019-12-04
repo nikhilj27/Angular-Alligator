@@ -10,7 +10,13 @@ button {
     outline: none;
 }
 
-.toolbar {
-    background-color: ghostwhite;
-    border-bottom: 1px solid lightgrey;
+.btn-label {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+
+mat-toolbar{
+  box-shadow: 0px 0px 20px rgba(0,0,0,.6);
 }

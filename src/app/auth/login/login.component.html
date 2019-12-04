@@ -1,40 +1,37 @@
 <div class="grid-container">
-    <div></div>
-    <div>
-        <div class="card">
+    <div class="box"></div>
+    <div class="box box2">
+        <mat-card>
             <form [formGroup]="loginForm">
                 <h3>Login</h3>
                 <h5>Great to see you again!</h5>
                 <div class="form-group">
-                    <input type="text" placeholder="username@email.com" [formControl]="loginForm.controls['username']"
-                    [ngClass]="(loginControls.username.errors?.required && submitted || loginControls.username.errors?.email && submitted) ? 'errClass': '' "
-                    >
-                    <div *ngIf="loginControls.username.errors?.required && submitted">
-                        <label class="errMsg">Username is required</label>
-                    </div>
-
-                    <div *ngIf="loginControls.username.errors?.email && submitted">
-                        <label class="errMsg">Enter valid email address</label>
-                    </div>
+                    <mat-form-field>
+                        <input matInput placeholder="username@email.com" [formControl]="loginForm.controls['username']">
+                        <mat-error *ngIf="loginControls.username.errors?.required">Username is required</mat-error>
+                    </mat-form-field>
                 </div>
 
                 <div class="form-group">
-                    <input type="password" placeholder="Password" [formControl]="loginForm.controls['password']"
-                    [ngClass]="loginControls.password.errors?.required && submitted ? 'errClass': '' "
-                    >
-                    <div *ngIf="loginControls.password.errors?.required && submitted">
-                        <label class="errMsg">Password is required</label>
-                    </div>
+                    <mat-form-field>
+                        <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'"
+                            [formControl]="loginForm.controls['password']">
+                        <mat-error *ngIf="loginControls.password.errors?.required">Password is required</mat-error>
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                            [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </div>
+                <div class="form-group createNew">
+                    Not a member yet? <a [routerLink]="['/register']">Create New</a>
+                </div>
+                <div class="form-group">
+                    <button mat-raised-button color="primary" (click)="loginUser()"
+                        style="outline: none;color: #fff;">SignIn</button>
                 </div>
             </form>
-            <div class="form-group createNew">
-                <a [routerLink]="['/register']">Create New</a>
-            </div>
-            <div class="form-group">
-                <button (click)="loginUser()">SignIn</button>
-            </div>
-
-        </div>
+        </mat-card>
     </div>
-    <div></div>
+    <div class="box"></div>
 </div>

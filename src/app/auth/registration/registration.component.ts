@@ -13,6 +13,7 @@ import { Router } from "@angular/router";
 export class RegistrationComponent implements OnInit {
   registrationForm: FormGroup;
   submitted: boolean = false;
+  hide = true;
 
   constructor(
     private fb: FormBuilder,

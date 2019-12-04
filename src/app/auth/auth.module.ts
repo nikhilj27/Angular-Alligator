@@ -8,6 +8,11 @@ import { AuthService } from '../Services/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterService } from '../Services/register.service';
 import { LoginService } from '../Services/login.service';
+import { MatButtonModule } from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [LoginComponent, RegistrationComponent, AuthComponent],
@@ -15,7 +20,12 @@ import { LoginService } from '../Services/login.service';
     CommonModule,
     AuthRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule,
+    MatCardModule
   ],
   providers:[
     AuthService,

@@ -1,9 +1,14 @@
 <header>
     <mat-toolbar color="primary">
-        <mat-toolbar-row class="toolbar">
-            <span>Dashboard</span>
+        <mat-toolbar-row >
+                <button mat-flat-button color="primary" class="btn-label" [routerLink]="['/dashboard']">Dashboard</button>
+                <button mat-flat-button color="primary" class="btn-label">Technologies</button>
+                <button mat-flat-button color="primary" class="btn-label" 
+                [routerLink]="['/dashboard/newblog']"
+                >New blog</button>
+                <button mat-flat-button color="primary" class="btn-label">Approvals</button>
             <span class="example-spacer"></span>
-            <button mat-stroked-button color="primary">New blog</button>
+            <button mat-flat-button color="primary" class="btn-label">Logout</button>
         </mat-toolbar-row>
     </mat-toolbar>
 </header>
