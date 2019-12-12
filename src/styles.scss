@@ -1,5 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
-@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: 'Ubuntu', sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.no-outline {
+  outline: none;
+}
+
+.mat-grid-tile .mat-figure {
+  justify-content: flex-start !important ;
+  align-items: flex-start !important;
+  padding: 2% 0% 0% 2% !important;
+}

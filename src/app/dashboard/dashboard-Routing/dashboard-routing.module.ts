@@ -15,7 +15,14 @@ const routes: Routes = [
       {
         path: "newblog",
         loadChildren: () =>
-          import("./../../newblog/newblog.module").then(m => m.NewblogModule),
+          import("./../../newblog/newblog.module").then(m => m.NewblogModule)
+      },
+      {
+        path: "technology",
+        loadChildren: () =>
+          import("./../../technologies/technologies.module").then(
+            m => m.TechnologiesModule
+          )
       }
     ]
   }

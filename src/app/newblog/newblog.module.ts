@@ -7,6 +7,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import {AutosizeModule} from 'ngx-autosize';
+import { NewblogService } from '../Services/newblog.service';
 
 @NgModule({
   declarations: [NewblogComponent],
@@ -18,6 +19,7 @@ import {AutosizeModule} from 'ngx-autosize';
     MatFormFieldModule,
     MatButtonModule,
     AutosizeModule
-  ]
+  ],
+  providers: [NewblogService]
 })
-export class NewblogModule { }
+export class NewblogModule {}

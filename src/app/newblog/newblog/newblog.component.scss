@@ -8,7 +8,7 @@
 [contenteditable="true"]:empty:before {
   content: attr(placeholder);
   color: rgb(82, 79, 79);
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 500;
   max-width: 100%;
   display: block; /* For Firefox */
@@ -23,8 +23,8 @@
 
 .divTitle {
   height: auto;
-  border: 1px solid lightgray;
-  border-radius: 5px;
+  border-left: 1px solid lightgray;
+  border-right: 1px solid lightgray;
   max-width: 100%;
 }
 
@@ -44,7 +44,8 @@
   overflow: hidden;
   font-weight: 600;
   resize: none;
-  font-size: 30px;
+  font-size: 20px;
+  border: 1px solid lightgray;
   padding: 3% 10% 0% 10%;
 }
 
@@ -76,7 +77,7 @@ textarea {
   word-break: break-all;
   cursor: text;
   outline: none;
-  font-size: 20px;
+  font-size: 15px;
   padding: 5% 10% 5% 10%;
 }
 

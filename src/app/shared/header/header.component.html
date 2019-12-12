@@ -1,12 +1,14 @@
 <header>
     <mat-toolbar color="primary">
-        <mat-toolbar-row >
-                <button mat-flat-button color="primary" class="btn-label" [routerLink]="['/dashboard']">Dashboard</button>
-                <button mat-flat-button color="primary" class="btn-label">Technologies</button>
-                <button mat-flat-button color="primary" class="btn-label" 
-                [routerLink]="['/dashboard/newblog']"
-                >New blog</button>
-                <button mat-flat-button color="primary" class="btn-label">Approvals</button>
+        <mat-toolbar-row>
+            <button mat-flat-button color="primary" class="btn-label" [routerLink]="['/dashboard']"
+                routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Dashboard</button>
+            <button mat-flat-button color="primary" class="btn-label" [routerLink]="['/dashboard/technology']"
+                routerLinkActive="active">Technologies</button>
+            <button mat-flat-button color="primary" class="btn-label" [routerLink]="['/dashboard/newblog']"
+                routerLinkActive="active">New
+                blog</button>
+            <button mat-flat-button color="primary" class="btn-label" routerLinkActive="active">Approvals</button>
             <span class="example-spacer"></span>
             <button mat-flat-button color="primary" class="btn-label">Logout</button>
         </mat-toolbar-row>

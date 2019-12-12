@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col-sm-8" style="text-align: end;">
+        <h4>Add New Technology</h4>
+    </div>
+    <div class="col-sm-4" style="display: flex;
+    justify-content: flex-end;">
+        <button mat-icon-button style="outline: none" aria-label="Example icon-button with a heart icon"
+            (click)="closeDialog()">
+            <i class="material-icons">close</i>
+        </button>
+    </div>
+</div>
+<div>
+    <form [formGroup]="technologyForm">
+        <mat-form-field class="fullwidth">
+            <input matInput placeholder="Technology name" [formControl]="technologyForm.controls.Name">
+            <mat-error *ngIf="technologyControls.Name.errors?.required">Name is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="fullwidth">
+            <input matInput placeholder="A short description" [formControl]="technologyForm.controls.Description">
+            <mat-error *ngIf="technologyControls.Description.errors?.required">Description is required</mat-error>
+        </mat-form-field>
+
+        <div>
+            <label class="btn" mat-stroked-button color="primary"
+                style="outline: none;border-color: #01bfbd;cursor:pointer;" (click)="openFileChooser()">
+                Choose files
+            </label>
+            &nbsp;
+            <input type="file" id="fileChooser" (change)="uploadImage($event)" style="display: none;">
+            <mat-form-field style="width: 80%;">
+                <input matInput placeholder="" value="{{ImageName}}">
+            </mat-form-field>
+        </div>
+
+        <div class=" text-center">
+            <button mat-raised-button color="primary" style="color: #fff;outline: none;">Save
+            </button>
+        </div>
+    </form>
+</div>

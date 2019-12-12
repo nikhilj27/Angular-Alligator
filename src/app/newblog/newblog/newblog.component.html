@@ -1,32 +1,30 @@
 <div class="container">
     <div class="divTitle">
         <div class="title">
-            <!-- <div class="box title" contenteditable="true" placeholder="Title..."></div> -->
             <textarea id="title" autosize [minRows]="1" placeholder="Title..."></textarea>
         </div>
         <div class="settings">
             <div class="imgDiv">
-                <img src="../../../assets/icons/bold.svg" class="icons">
+                <img src="../../../assets/icons/bold.svg" class="icons" (click)="boldText()">
             </div>
             <div class="imgDiv">
-                <img src="../../../assets/icons/italic.svg" class="icons">
+                <img src="../../../assets/icons/italic.svg" class="icons" (click)="italicText()">
             </div>
             <div class="imgDiv">
                 <img src="../../../assets/icons/source.svg" class="icons">
             </div>
             <div class="imgDiv">
-                <img src="../../../assets/icons/image.svg" class="icons">
+                <img src="../../../assets/icons/image.svg" class="icons" (click)="uploadImage()">
+                <input id="fileSelector" style="display: none;" type="file" (change)="openFileChooser($event)">
             </div>
         </div>
         <div class="content">
-            <!-- <textarea autosize [minRows]="5" placeholder="Tell your story..."></textarea> -->
-            <div id="story" contenteditable="true" placeholder="Tell your story..."></div>
-
+            <div id="story" contenteditable="true" placeholder="Tell your story...">
+            </div>
         </div>
-        <!-- <p class="box title" contenteditable="true" placeholder="Tell your story..."></p> -->
     </div>
 
     <div class="Publish">
-        <button mat-raised-button color="primary" class="publishBtn">Publish your blog</button>
+        <button mat-raised-button color="primary" class="publishBtn" (click)="publish()">Publish your blog</button>
     </div>
 </div>

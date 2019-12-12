@@ -1,7 +1,12 @@
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import { AuthService } from "src/app/Services/auth.service";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
-import { ILoginModel, LoginModel, Data } from "../../Models/login.model";
+import {
+  ILoginModel,
+  LoginModel,
+  Data,
+  ResponseModel
+} from "../../Models/login.model";
 import { SnackbarService } from "src/app/Services/snackbar.service";
 
 @Component({
@@ -39,7 +44,7 @@ export class LoginComponent implements OnInit {
         this.loginForm.value.username,
         this.loginForm.value.password
       );
-      this.authService.login(loginInfo).subscribe((response: Data) => {
+      this.authService.login(loginInfo).subscribe((response: ResponseModel) => {
         this.snackBarService.openSnackBar("Login successfull..!!");
         this.loginForm.reset();
         this.submitted = false;
