@@ -1,24 +1,79 @@
 <div class="container">
     <div class="divTitle">
-        <div class="title">
-            <textarea id="title" autosize [minRows]="1" placeholder="Title..."></textarea>
-        </div>
         <div class="settings">
             <div class="imgDiv">
-                <img src="../../../assets/icons/bold.svg" class="icons" (click)="boldText()">
+                <label class="btn" mat-stroked-button color="primary" (click)="boldText()">
+                    <i class="fa fa-bold" aria-hidden="true"></i>
+                </label>
             </div>
             <div class="imgDiv">
-                <img src="../../../assets/icons/italic.svg" class="icons" (click)="italicText()">
+                <label class="btn" mat-stroked-button color="primary" (click)="italicText()">
+                    <i class="fa fa-italic" aria-hidden="true"></i>
+                </label>
             </div>
             <div class="imgDiv">
-                <img src="../../../assets/icons/source.svg" class="icons">
+                <label class="btn" mat-stroked-button color="primary" (click)="underlineText()">
+                    <i class="fa fa-underline" aria-hidden="true"></i>
+                </label>
             </div>
             <div class="imgDiv">
-                <img src="../../../assets/icons/image.svg" class="icons" (click)="uploadImage()">
+                <label class="btn" mat-stroked-button color="primary" (click)="insertCodeBlock()">
+                    <i class="fa fa-code" aria-hidden="true"></i>
+                </label>
+            </div>
+            <div class="imgDiv">
+                <label class="btn" mat-stroked-button color="primary" (click)="indent()">
+                    <i class="fa fa-indent" aria-hidden="true"></i>
+                </label>
+            </div>
+            <div class="imgDiv">
+                <label class="btn" mat-stroked-button color="primary" (click)="outdent()">
+                    <i class="fa fa-outdent" aria-hidden="true"></i>
+                </label>
+            </div>
+            <div class="imgDiv">
+                <label class="btn" mat-stroked-button color="primary" (click)="insertUnorderedList()">
+                    <i class="fa fa-list" aria-hidden="true"></i>
+                </label>
+            </div>
+            <div class="imgDiv">
+                <label class="btn" mat-stroked-button color="primary" (click)="insertOrderedList()">
+                    <i class="fa fa-list-ol" aria-hidden="true"></i>
+                </label>
+            </div>
+            <div class="imgDiv">
+                <label class="btn" mat-stroked-button color="primary" (click)="justifyFull()">
+                    <i class="fa fa-align-justify" aria-hidden="true"></i>
+                </label>
+            </div>
+            <div class="imgDiv">
+                <label class="btn" mat-stroked-button color="primary" (click)="justifyRight()">
+                    <i class=" fa fa-align-right" aria-hidden="true"></i>
+                </label>
+            </div>
+            <div class="imgDiv">
+                <label class="btn" mat-stroked-button color="primary" (click)="justifyCenter()">
+                    <i class="fa fa-align-center" aria-hidden="true"></i>
+                </label>
+            </div>
+            <div class="imgDiv">
+                <label class="btn" mat-stroked-button color="primary" (click)="justifyLeft()">
+                    <i class="fa fa-align-left" aria-hidden="true"></i>
+                </label>
+            </div>
+            <div class="imgDiv">
+                <!-- <img src="../../../assets/icons/image.svg" class="icons"> -->
+                <label class="btn" mat-stroked-button color="primary">
+                    <i class="fa fa-file" aria-hidden="true" (click)="uploadImage()"></i>
+                </label>
                 <input id="fileSelector" style="display: none;" type="file" (change)="openFileChooser($event)">
             </div>
         </div>
         <div class="content">
+            <div class="title">
+                <input type="text" id="title" autosize [minRows]="1" placeholder="Title...">
+                <!-- </textarea> -->
+            </div>
             <div id="story" contenteditable="true" placeholder="Tell your story...">
             </div>
         </div>

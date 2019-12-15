@@ -6,12 +6,13 @@ import { NewblogComponent } from "../newblog/newblog.component";
 const routes: Routes = [
   {
     path: "",
-    component: NewblogComponent
+    component: NewblogComponent,
+    data: { page: "newblog" }
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [CommonModule, RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
 export class NewblogRoutingModule {}
