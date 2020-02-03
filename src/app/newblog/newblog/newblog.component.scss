@@ -107,3 +107,34 @@ img {
   object-fit: cover;
   overflow: hidden;
 }
+
+.codeBlock {
+  width: 100%;
+  height: 100px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+pre {
+  background: #303030;
+  color: #f1f1f1;
+  padding: 10px 16px;
+  border-radius: 2px;
+  border-top: 4px solid #00aeef;
+  -moz-box-shadow: inset 0 0 10px #000;
+  box-shadow: inset 0 0 10px #000;
+  counter-reset: line;
+}
+pre {
+  display: block;
+  line-height: 1.5rem;
+}
+pre:before {
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  border-right: 1px solid #ddd;
+  padding: 0 0.5em;
+  margin-right: 0.5em;
+  color: #888;
+}

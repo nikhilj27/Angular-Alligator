@@ -11,6 +11,6 @@ export class RegisterService {
   constructor(private http: HttpClient) {}
 
   register(userInfo: IRegisterModel): Observable<ResponseModel> {
-    return this.http.post<ResponseModel>(`/api/Auth/UserRegistration`, userInfo);
+    return this.http.post<ResponseModel>(`/api/register`, userInfo);
   }
 }

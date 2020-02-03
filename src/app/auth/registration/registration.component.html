@@ -1,4 +1,4 @@
-<div class="grid-container">
+<div class="grid-container" *ngIf="false">
     <div></div>
     <div>
         <mat-card>
@@ -43,4 +43,70 @@
         </mat-card>
     </div>
     <div></div>
+</div>
+
+
+<div class="alignCard">
+    <div class="ui cards">
+        <div class="card">
+            <div class="content">
+                <div class="header text-center">Become a member...</div>
+                <div class="meta text-center">It's all starts here</div>
+                <div class="description">
+                    <form [formGroup]="registrationForm" class="ui fluid form" autocomplete="off">
+
+                        <div class="field required"
+                            [ngClass]="submitted && registerControl.name.errors?.required ? 'error':''">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="E.g. John Wick"
+                                [formControl]="registrationForm.controls['name']">
+                            <div class="ui pointing label" *ngIf="submitted && registerControl.name.errors?.required">
+                                Please enter Full Name
+                            </div>
+                        </div>
+
+                        <div class="field required"
+                            [ngClass]="(submitted && registerControl.email.errors?.email || submitted && registerControl.email.errors?.required) ? 'error':''">
+                            <label>Username</label>
+                            <input type="text" placeholder="username@email.com"
+                                [formControl]="registrationForm.controls['email']">
+                            <div class="ui pointing label" *ngIf="submitted && registerControl.email.errors?.required">
+                                Please enter username
+                            </div>
+                            <div class="ui pointing label" *ngIf="submitted && registerControl.email.errors?.email">
+                                Please enter valid email address
+                            </div>
+                        </div>
+
+                        <div class="field required"
+                            [ngClass]="submitted && registerControl.password.errors?.required ? 'error':''">
+                            <label>Password</label>
+                            <div class="ui icon input">
+                                <input [type]="hide ? 'password' : 'text'" placeholder="Password"
+                                    [formControl]="registrationForm.controls['password']">
+                                <i (click)="hide = !hide" class="circular icon link"
+                                    [ngClass]="hide ? 'eye' : 'eye slash'"></i>
+                            </div>
+                            <div class="ui pointing label"
+                                *ngIf="submitted && registerControl.password.errors?.required">
+                                Please enter password
+                            </div>
+                        </div>
+
+                        <div>
+                            <button class="ui primary button" (click)="registerUser()">
+                                Register
+                            </button>
+                        </div>
+                        <div class="ui divider"></div>
+                        <div>
+                            <button class="ui button" [routerLink]="['']">
+                                <span class="meta">Already have account? </span> Login
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

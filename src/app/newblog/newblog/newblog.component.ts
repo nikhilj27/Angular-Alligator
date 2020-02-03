@@ -8,6 +8,12 @@ import TurndownService from "turndown";
 })
 export class NewblogComponent implements OnInit, AfterViewInit {
   base64: string;
+  content = `
+  indent() {
+    document.execCommand("indent", false, null);
+  }
+  
+  `;
   ngAfterViewInit(): void {}
 
   constructor() {}
@@ -98,6 +104,12 @@ export class NewblogComponent implements OnInit, AfterViewInit {
       if (sel.getRangeAt && sel.rangeCount) {
         range = sel.getRangeAt(0);
         range.deleteContents();
+        var div = document.createElement("pre");
+        div.style.width = "100%";
+        div.style.height = "500px";
+        div.style.border = "1px solid lightgrey";
+        div.style.borderRadius = "3px";
+        range.insertNode(div);
       }
     }
   }

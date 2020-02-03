@@ -46,7 +46,7 @@ export class RegistrationComponent implements OnInit {
         .register(registerInfo)
         .subscribe((response: ResponseModel) => {
           if (response.status === 200) {
-            this.router.navigateByUrl("");
+            alert('Regisration successfull.');
           }
         });
     }

@@ -1,16 +1,16 @@
 export interface IRegisterModel {
-  Name: string;
-  Username: string;
-  Password: string;
+  fullName: string;
+  email: string;
+  password: string;
 }
 
 export class RegisterModel implements IRegisterModel {
-  Name: string;
-  Username: string;
-  Password: string;
+  fullName: string;
+  email: string;
+  password: string;
   constructor(name: string, email: string, password: string) {
-    this.Name = name;
-    this.Username = email;
-    this.Password = password;
+    this.fullName = name;
+    this.email = email;
+    this.password = password;
   }
 }

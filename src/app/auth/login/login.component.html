@@ -1,4 +1,4 @@
-<div class="grid-container">
+<div class="grid-container" *ngIf="false">
     <div class="box"></div>
     <div class="box box2">
         <mat-card>
@@ -34,4 +34,55 @@
         </mat-card>
     </div>
     <div class="box"></div>
+</div>
+
+
+<div class="alignCard">
+    <div class="ui cards">
+        <div class="card">
+            <div class="content">
+                <div class="header text-center">Login</div>
+                <div class="meta text-center">Great to see you again!</div>
+                <div class="description">
+                    <form [formGroup]="loginForm" class="ui fluid form" autocomplete="off">
+                        <div class="field required"
+                            [ngClass]="submitted && loginControls.username.errors?.required ? 'error':''">
+                            <label>Username</label>
+                            <input type="text" placeholder="username@email.com"
+                                [formControl]="loginForm.controls['username']">
+                            <div class="ui pointing label" *ngIf="submitted && loginControls.username.errors?.required">
+                                Please enter username
+                            </div>
+                        </div>
+
+                        <div class="field required"
+                            [ngClass]="submitted && loginControls.password.errors?.required ? 'error':''">
+                            <label>Password</label>
+                            <div class="ui icon input">
+                                <input [type]="hide ? 'password' : 'text'" placeholder="Password"
+                                    [formControl]="loginForm.controls['password']">
+                                <i (click)="hide = !hide" class="circular icon link"
+                                    [ngClass]="hide ? 'eye' : 'eye slash'"></i>
+                            </div>
+                            <div class="ui pointing label" *ngIf="submitted && loginControls.password.errors?.required">
+                                Please enter password
+                            </div>
+                        </div>
+
+                        <div>
+                            <button class="ui primary button" (click)="loginUser()">
+                                Login
+                            </button>
+                        </div>
+                        <div class="ui divider"></div>
+                        <div>
+                            <button class="ui button" [routerLink]="['/register']">
+                                <span class="meta">Not a member yet? </span> Register
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

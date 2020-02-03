@@ -9,18 +9,22 @@ import { MatButtonModule } from "@angular/material/button";
 import { AutosizeModule } from "ngx-autosize";
 import { NewblogService } from "../Services/newblog.service";
 import { MatCardModule } from "@angular/material/card";
-
+import { CodemirrorModule } from "@ctrl/ngx-codemirror";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 @NgModule({
   declarations: [NewblogComponent],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     NewblogRoutingModule,
     MatIconModule,
     MatSelectModule,
     MatFormFieldModule,
     MatButtonModule,
     MatCardModule,
-    AutosizeModule
+    AutosizeModule,
+    CodemirrorModule
   ],
   providers: [NewblogService]
 })
