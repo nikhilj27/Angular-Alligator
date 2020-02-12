@@ -62,7 +62,7 @@
                                 <input [type]="hide ? 'password' : 'text'" placeholder="Password"
                                     [formControl]="loginForm.controls['password']">
                                 <i (click)="hide = !hide" class="circular icon link"
-                                    [ngClass]="hide ? 'eye' : 'eye slash'"></i>
+                                    [ngClass]="hide ? 'eye slash' : 'eye'"></i>
                             </div>
                             <div class="ui pointing label" *ngIf="submitted && loginControls.password.errors?.required">
                                 Please enter password
@@ -71,13 +71,13 @@
 
                         <div>
                             <button class="ui primary button" (click)="loginUser()">
-                                Login
+                                Sign In
                             </button>
                         </div>
                         <div class="ui divider"></div>
                         <div>
                             <button class="ui button" [routerLink]="['/register']">
-                                <span class="meta">Not a member yet? </span> Register
+                                <span class="meta">Not a member yet? </span> Sign Up
                             </button>
                         </div>
                     </form>

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="false">
     <div class="divTitle">
         <div class="settings">
             <div class="imgDiv">
@@ -82,4 +82,48 @@
     <div class="Publish">
         <button mat-raised-button color="primary" class="publishBtn" (click)="publish()">Publish your blog</button>
     </div>
+</div>
+
+
+<div class="ui cards" style="padding: 1% 10% 0 10%;">
+    <div class="card">
+        <div class="content">
+            <div class="header" style="text-align: center;padding: 1%;">
+                <div class="ui icon buttons">
+                    <button class="ui button" (click)="boldText()"><i class="bold icon"></i></button>
+                    <button class="ui button" (click)="underlineText()"><i class="underline icon"></i></button>
+                    <button class="ui button" (click)="italicText()"><i class="italic icon"></i></button>
+                    <button class="ui button" (click)="insertCodeBlock()"><i class="file code icon"></i></button>
+                </div>
+                <div class="ui icon buttons">
+                    <button class="ui button" (click)="justifyLeft()"><i class="align left icon"></i></button>
+                    <button class="ui button" (click)="justifyCenter()"><i class="align center icon"></i></button>
+                    <button class="ui button" (click)="justifyRight()"><i class="align right icon"></i></button>
+                    <button class="ui button" (click)="justifyFull()"><i class="align justify icon"></i></button>
+                    <button class="ui button" (click)="indent()"><i class="indent icon"></i></button>
+                    <button class="ui button" (click)="outdent()"><i class="outdent icon"></i></button>
+                    <button class="ui button" (click)="insertUnorderedList()"><i class="list icon"></i></button>
+                    <button class="ui button" (click)="insertOrderedList()"><i class="list ol icon"></i></button>
+                    <button class="ui button" (click)="uploadImage()"><i class="images outline icon"></i></button>
+                    <input id="fileSelector" style="display: none;" type="file" (change)="openFileChooser($event)">
+                </div>
+            </div>
+
+            <div class="header">
+                <div class="ui input focus" style="width: 100%;">
+                    <input type="text" placeholder="Title...">
+                </div>
+            </div>
+
+            <div class="description">
+                <div id="story" contenteditable="true" placeholder="Tell your story...">
+                </div>
+            </div>
+        </div>
+        <div class="extra content">
+            <button class="ui button" style="font-weight: 600;">Publish Story</button>
+        </div>
+    </div>
+
+
 </div>

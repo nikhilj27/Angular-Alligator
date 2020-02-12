@@ -85,7 +85,7 @@
                                 <input [type]="hide ? 'password' : 'text'" placeholder="Password"
                                     [formControl]="registrationForm.controls['password']">
                                 <i (click)="hide = !hide" class="circular icon link"
-                                    [ngClass]="hide ? 'eye' : 'eye slash'"></i>
+                                    [ngClass]="hide ? 'eye slash' : 'eye'"></i>
                             </div>
                             <div class="ui pointing label"
                                 *ngIf="submitted && registerControl.password.errors?.required">
@@ -95,14 +95,21 @@
 
                         <div>
                             <button class="ui primary button" (click)="registerUser()">
-                                Register
+                                Sign Up
                             </button>
                         </div>
                         <div class="ui divider"></div>
                         <div>
                             <button class="ui button" [routerLink]="['']">
-                                <span class="meta">Already have account? </span> Login
+                                <span class="meta">Already have account? </span> Sign In
                             </button>
+                        </div>
+                        <div class="ui success message" style="display: block;">
+                            <i class="close icon"></i>
+                            <div class="header">
+                                Your user registration was successful.
+                            </div>
+                            <p>You may now log-in with the username you have chosen</p>
                         </div>
                     </form>
                 </div>

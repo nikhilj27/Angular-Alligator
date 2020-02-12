@@ -1,4 +1,4 @@
-<header>
+<header *ngIf="false">
     <mat-toolbar color="primary">
         <mat-toolbar-row>
             <button mat-flat-button color="primary" class="btn-label" [routerLink]="['/dashboard']"
@@ -14,3 +14,47 @@
         </mat-toolbar-row>
     </mat-toolbar>
 </header>
+
+
+
+<div class="ui secondary pointing menu">
+    <a class="item" [routerLink]="['/dashboard']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        Dashboard
+    </a>
+    <a class="item" [routerLink]="['/dashboard/technology']" routerLinkActive="active">
+        Technologies
+    </a>
+    <a class="item" [routerLink]="['/dashboard/newblog']" routerLinkActive="active">
+        New
+        blog
+    </a>
+    <a class="item">
+        Approvals
+    </a>
+    <div class="right menu">
+        <a class="ui item" (click)="openLogoutModal()">
+            Logout
+        </a>
+    </div>
+</div>
+
+
+
+
+<div class="ui basic modal modalConfig">
+    <div class="ui icon header">
+        <i class="lock icon"></i>
+        Are you sure
+    </div>
+
+    <div class="actions text-center">
+        <div class="ui red basic cancel inverted button">
+            <i class="remove icon"></i>
+            No
+        </div>
+        <div class="ui green ok inverted button" (click)="Logout()">
+            <i class="checkmark icon"></i>
+            Yes
+        </div>
+    </div>
+</div>
